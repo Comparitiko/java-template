@@ -1,0 +1,6 @@
+server:
+  port: ${APP_PORT}
+
+spring:
+  config:
+    import: optional:file:.env[.properties]

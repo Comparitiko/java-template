@@ -3,3 +3,4 @@ build
 .idea
 var/log/*
 !var/log/.gitkeep
+.env
