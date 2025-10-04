@@ -9,6 +9,9 @@ format:
 lint:
 	@./gradlew spotlessApply
 
+shared-test:
+	@./gradlew :shared:test
+
 api-test:
 	@./gradlew :api:test
 
