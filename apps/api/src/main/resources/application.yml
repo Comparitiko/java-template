@@ -1,6 +1,17 @@
 server:
   port: ${APP_PORT}
-
+  servlet:
+    context-path: /api
 spring:
   config:
     import: optional:file:.env[.properties]
+
+logging:
+  level:
+    root: OFF                    # Disable all root logs
+    org.springframework: OFF     # Disable Spring Framework logs
+    org.hibernate: OFF           # Disable Hibernate logs
+    org.apache.catalina: OFF     # Disable Tomcat logs
+    com.comparitiko: DEBUG         # Enable DEBUG logs for application packages
+  pattern:
+    console: "%d{yyyy-MM-dd HH:mm:ss} [%X{requestId}] %-5level %logger{12} - %msg%n"
