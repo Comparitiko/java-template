@@ -10,7 +10,7 @@ import java.io.IOException;
 import java.util.UUID;
 
 @Component
-public class RequestLogging implements Filter {
+public class RequestIdFilter implements Filter {
 
     private static final String REQUEST_ID_HEADER = "X-Request-ID";
 
