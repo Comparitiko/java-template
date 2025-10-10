@@ -1,5 +1,6 @@
 package com.comparitiko.api.middlewares;
 
+import com.comparitiko.api.common.RequestAttributes;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import org.slf4j.Logger;
@@ -30,7 +31,7 @@ public final class TimingInterceptor implements HandlerInterceptor {
 
             String method = request.getMethod();
             String uri = request.getRequestURI();
-            String requestId = MDC.get("requestId");
+            String requestId = (String) request.getAttribute(RequestAttributes.REQUEST_ID);
 
             logger.info("Request [{}] {} {} completed in {} ms", requestId, method, uri, duration);
         }
